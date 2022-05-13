@@ -14,27 +14,35 @@
         .floor_cont{position:relative; width:900px; height:600px; border:2px solid #000;}
         .floor_1{height:100%; position:absolute; left:0; right:0; top:0; z-index:1; background-color:#fcfcfc;}
         .floor_2{height:100%; position:absolute; left:0; right:0; top:0; z-index:1;}
-        .floor_2 .left{width:150px; background-color:#fff; height:100%; float:left; position:relative; border-right:2px solid #00a; background-color:#fafafa;}
-        .floor_2 .right{width:150px; background-color:#fff; height:100%; float:right; position:relative; border-left:2px solid #00a; background-color:#fafafa;}
-        .floor_2 .center{width:calc(100% - 296px); height:150px; background-color:#fff; left:148px; top:0; position:absolute; border-bottom:2px solid #00a; background-color:#fafafa;}
+        .floor_2 .left{width:150px; background-color:#fff; height:100%; float:left; position:relative; border-right:2px solid #00a;}
+        .floor_2 .right{width:150px; background-color:#fff; height:100%; float:right; position:relative; border-left:2px solid #00a;}
+        .floor_2 .center{width:calc(100% - 296px); height:150px; background-color:#fff; left:148px; top:0; position:absolute; border-bottom:2px solid #00a;}
 
         .floor_2 .left .desc_list{position:absolute; bottom:30px; left:2px;}
+        .floor_2 .left .desc_list .desc{border-color:#ffa0c8; color:#ffa0c8; background-color:#ffa0c811;}
         .floor_2 .right .desc_list{position:absolute; bottom:30px; right:2px;}
+        .floor_2 .right .desc_list .desc{border-color:#ff7f00; color:#ff7f00; background-color:#ff7f0011;}
         .floor_2 .center .desc_list{position:absolute; bottom:-112%; right:55%; margin-right:-60px; transform:rotate(90deg)}
         .floor_2 .right .desc_list.type2{transform:none; right:20px; bottom:unset; top:20px;}
+        .floor_2 .center .desc_list .desc{border-color:#fee139; color:#fee139; background-color:#fee13911;}
         
         .floor_1 .desc_list.type3{position:absolute; left:170px; top:200px; width:200px;}
+        .floor_1 .desc_list.type3 .desc{border-color:#348cf4; color:#348cf4; background-color:#348cf411;}
         .floor_1 .desc_list.type3 li{float:left; margin-top:10px;}
         .floor_1 .desc_list.type3 li{transform:rotate(-90deg);}
         .floor_1 .desc_list.type3 li:nth-child(odd){transform:rotate(90deg); margin-right:-11px;}
         .floor_1 .desc_list.type3 li:last-child{transform:none; margin-left:45px; margin-top:4px}
         .floor_1 .desc_list.type3.second{left:370px;}
+        .floor_1 .desc_list.type3.second .desc{border-color:#a9de61; color:#a9de61; background-color:#a9de6111;}
+
+        .floor_1 .stair{position:absolute; right:150px; top:150px; border-bottom:1px solid #696969;}
+        .floor_1 .stair li{width:90px; height:25px; border:1px solid #696969; border-bottom:0; background-color:#f5f5f5;}
 
         .desc_list li{width:100px;}
         .desc_list li.rotate{transform:rotate(180deg);}
         .desc_list li.rotate .desc{transform:rotate(180deg);}
         .desc_list li.martop{margin-top:70px;}
-        .desc_list .desc{border:1px solid #f00; width:100%; height:50px; text-align:center; line-height:50px; color:#f00; font-weight:700; background-color:#fff;}
+        .desc_list .desc{border:1px solid ; width:100%; height:50px; text-align:center; line-height:50px; font-weight:700; background-color:#fff;}
         .desc_list .seat{height:40px; position:relative; text-align:center; animation:introAni 1s forwards linear; z-index:2; opacity:0;}
         .desc_list .seat:after{content:''; display:inline-block; width:25px; height:25px; margin-top:7px; margin-bottom:-30px; border-radius:40%; box-shadow:0 0 5px rgba(0,0,0,.2); animation:faceAni 1s infinite; animation-delay:inherit;}
         .desc_list .seat[data-name="배정훈"]:after{background:url('./picture.png') no-repeat center 0px/25px;}
@@ -126,6 +134,14 @@
                         <p class="desc"></p>
                         <p class="seat" data-name=""></p>
                     </li>
+                </ul>
+                <ul class="stair">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </ul>
             </div>
             <!-- // floor_1 -->
