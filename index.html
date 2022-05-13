@@ -8,12 +8,13 @@
     <style>
         html, body, *{margin:0; padding:0; box-sizing: border-box;}
         li{list-style:none;}
-        .wrap{width:900px; height:600px; border:1px solid #000; position:fixed; left:50%; top:50%; transform:translate(-50%, -50%);}
-        .floor_1{height:100%; position:absolute; left:0; right:0; top:0; z-index:1;}
-        .floor_2{height:100%; position:absolute; left:0; right:0; top:0; z-index:0;}
-        .floor_2 .left{width:150px; background-color:#fff; height:100%; float:left; position:relative; border-right:2px solid #00a;}
-        .floor_2 .right{width:150px; background-color:#fff; height:100%; float:right; position:relative; border-left:2px solid #00a;}
-        .floor_2 .center{width:calc(100% - 296px); height:150px; background-color:#fff; left:148px; top:0; position:absolute; border-bottom:2px solid #00a;}
+        .wrap{width:900px;  position:fixed; left:50%; top:50%; transform:translate(-50%, -50%);}
+        .floor_cont{position:relative; width:900px; height:600px; border:2px solid #000;}
+        .floor_1{height:100%; position:absolute; left:0; right:0; top:0; z-index:1; background-color:#fcfcfc;}
+        .floor_2{height:100%; position:absolute; left:0; right:0; top:0; z-index:1;}
+        .floor_2 .left{width:150px; background-color:#fff; height:100%; float:left; position:relative; border-right:2px solid #00a; background-color:#fafafa;}
+        .floor_2 .right{width:150px; background-color:#fff; height:100%; float:right; position:relative; border-left:2px solid #00a; background-color:#fafafa;}
+        .floor_2 .center{width:calc(100% - 296px); height:150px; background-color:#fff; left:148px; top:0; position:absolute; border-bottom:2px solid #00a; background-color:#fafafa;}
 
         .floor_2 .left .desc_list{position:absolute; bottom:30px; left:2px;}
         .floor_2 .right .desc_list{position:absolute; bottom:30px; right:2px;}
@@ -31,7 +32,7 @@
         .desc_list li.rotate{transform:rotate(180deg);}
         .desc_list li.rotate .desc{transform:rotate(180deg);}
         .desc_list li.martop{margin-top:70px;}
-        .desc_list .desc{border:1px solid #f00; width:100%; height:50px; text-align:center; line-height:50px; color:#f00; font-weight:700;}
+        .desc_list .desc{border:1px solid #f00; width:100%; height:50px; text-align:center; line-height:50px; color:#f00; font-weight:700; background-color:#fff;}
         .desc_list .seat{height:40px; position:relative; text-align:center; animation:introAni 1s forwards linear; z-index:2; opacity:0;}
         .desc_list .seat:after{content:''; display:inline-block; width:25px; height:25px; margin-top:7px; margin-bottom:-30px; border-radius:40%; box-shadow:0 0 5px rgba(0,0,0,.2); animation:faceAni 1s infinite; animation-delay:inherit;}
         .desc_list .seat[data-name="배정훈"]:after{background:url('./picture.png') no-repeat center 0px/25px;}
@@ -61,11 +62,10 @@
         }
 
         @keyframes introAni {
-            0%{transform:scale(10); opacity:0;}
-            25%{transform:scale(8);}
+            0%{transform:scale(8); opacity:0;}
+            25%{transform:scale(5);}
             50%{opacity:1;}
 
-           
             68%{transform:scale(.7);}
             76%{transform:scale(1);}
             83%{transform:scale(.8);}
@@ -77,146 +77,149 @@
 </head>
 <body>
     <div class="wrap">
-        <!-- floor_1 -->
-        <div class="floor_1">
-            <ul class="desc_list type3">
-                <li>
-                    <p class="desc">노원호</p>
-                    <p class="seat" data-name="노원호"></p>
-                </li>
-                <li>
-                    <p class="desc">NEW</p>
-                    <p class="seat" data-name=""></p>
-                </li>
-                <li>
-                    <p class="desc">조승민</p>
-                    <p class="seat" data-name="조승민"></p>
-                </li>
-                <li>
-                    <p class="desc">NEW</p>
-                    <p class="seat" data-name=""></p>
-                </li>
-                <li>
-                    <p class="desc">조현재</p>
-                    <p class="seat" data-name="조현재"></p>
-                </li>
-            </ul>
-            <ul class="desc_list type3 second">
-                <li>
-                    <p class="desc"></p>
-                    <p class="seat" data-name=""></p>
-                </li>
-                <li>
-                    <p class="desc"></p>
-                    <p class="seat" data-name=""></p>
-                </li>
-                <li>
-                    <p class="desc"></p>
-                    <p class="seat" data-name=""></p>
-                </li>
-                <li>
-                    <p class="desc"></p>
-                    <p class="seat" data-name=""></p>
-                </li>
-                <li>
-                    <p class="desc"></p>
-                    <p class="seat" data-name=""></p>
-                </li>
-            </ul>
-        </div>
-        <!-- // floor_1 -->
-        
-        
-        <!-- // floor_2 -->
-        <div class="floor_2">
-            <div class="left">
-                <ul class="desc_list">
-                    <li class="rotate">
-                        <p class="desc"></p>
-                        <p class="seat" data-name=""></p>
-                    </li>
+        <h1 class="title">UXstory 자리표</h1>
+        <div class="floor_cont">
+            <!-- floor_1 -->
+            <div class="floor_1">
+                <ul class="desc_list type3">
                     <li>
-                        <p class="desc">김유정</p>
-                        <p class="seat" data-name="김유정"></p>
-                    </li>
-                    <li class="rotate">
-                        <p class="desc">배정훈</p>
-                        <p class="seat" data-name="배정훈"></p>
-                    </li>
-                    <li>
-                        <p class="desc">노지선</p>
-                        <p class="seat" data-name="노지선"></p>
-                    </li>
-                    <li>
-                        <p class="desc">박유나</p>
-                        <p class="seat" data-name="박유나"></p>
-                    </li>
-                </ul>
-            </div>
-            <div class="right">
-                <ul class="desc_list type2">
-                    <li class="rotate">
-                        <p class="desc">황한나</p>
-                        <p class="seat" data-name="황한나"></p>
-                    </li>
-                </ul>
-                <ul class="desc_list">
-                    <li class="rotate">
-                        <p class="desc"></p>
-                        <p class="seat" data-name=""></p>
+                        <p class="desc">노원호</p>
+                        <p class="seat" data-name="노원호"></p>
                     </li>
                     <li>
                         <p class="desc">NEW</p>
                         <p class="seat" data-name=""></p>
                     </li>
-                    <li class="rotate">
-                        <p class="desc">이다혜</p>
-                        <p class="seat" data-name="이다혜"></p>
+                    <li>
+                        <p class="desc">조승민</p>
+                        <p class="seat" data-name="조승민"></p>
                     </li>
                     <li>
-                        <p class="desc">김나현</p>
-                        <p class="seat" data-name="김나현"></p>
-                    </li>
-                    <li>
-                        <p class="desc">정하영</p>
-                        <p class="seat" data-name="정하영"></p>
-                    </li>
-                </ul>
-            </div>
-            <div class="center">
-                <ul class="desc_list">
-                    <li>
-                        <p class="desc">알바</p>
-                        <p class="seat" data-name=""></p>
-                    </li>
-                    <li class="rotate">
-                        <p class="desc">알바</p>
-                        <p class="seat" data-name=""></p>
-                    </li>
-                    <li class="martop">
-                        <p class="desc">정주연</p>
-                        <p class="seat" data-name="정주연"></p>
-                    </li>
-                    <li class="rotate">
                         <p class="desc">NEW</p>
                         <p class="seat" data-name=""></p>
                     </li>
                     <li>
-                        <p class="desc">배혜현</p>
-                        <p class="seat" data-name="배혜현"></p>
+                        <p class="desc">조현재</p>
+                        <p class="seat" data-name="조현재"></p>
+                    </li>
+                </ul>
+                <ul class="desc_list type3 second">
+                    <li>
+                        <p class="desc"></p>
+                        <p class="seat" data-name=""></p>
+                    </li>
+                    <li>
+                        <p class="desc"></p>
+                        <p class="seat" data-name=""></p>
+                    </li>
+                    <li>
+                        <p class="desc"></p>
+                        <p class="seat" data-name=""></p>
+                    </li>
+                    <li>
+                        <p class="desc"></p>
+                        <p class="seat" data-name=""></p>
+                    </li>
+                    <li>
+                        <p class="desc"></p>
+                        <p class="seat" data-name=""></p>
                     </li>
                 </ul>
             </div>
+            <!-- // floor_1 -->
+
+
+            <!-- // floor_2 -->
+            <div class="floor_2">
+                <div class="left">
+                    <ul class="desc_list">
+                        <li class="rotate">
+                            <p class="desc"></p>
+                            <p class="seat" data-name=""></p>
+                        </li>
+                        <li>
+                            <p class="desc">김유정</p>
+                            <p class="seat" data-name="김유정"></p>
+                        </li>
+                        <li class="rotate">
+                            <p class="desc">배정훈</p>
+                            <p class="seat" data-name="배정훈"></p>
+                        </li>
+                        <li>
+                            <p class="desc">노지선</p>
+                            <p class="seat" data-name="노지선"></p>
+                        </li>
+                        <li>
+                            <p class="desc">박유나</p>
+                            <p class="seat" data-name="박유나"></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul class="desc_list type2">
+                        <li class="rotate">
+                            <p class="desc">황한나</p>
+                            <p class="seat" data-name="황한나"></p>
+                        </li>
+                    </ul>
+                    <ul class="desc_list">
+                        <li class="rotate">
+                            <p class="desc"></p>
+                            <p class="seat" data-name=""></p>
+                        </li>
+                        <li>
+                            <p class="desc">NEW</p>
+                            <p class="seat" data-name=""></p>
+                        </li>
+                        <li class="rotate">
+                            <p class="desc">이다혜</p>
+                            <p class="seat" data-name="이다혜"></p>
+                        </li>
+                        <li>
+                            <p class="desc">김나현</p>
+                            <p class="seat" data-name="김나현"></p>
+                        </li>
+                        <li>
+                            <p class="desc">정하영</p>
+                            <p class="seat" data-name="정하영"></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="center">
+                    <ul class="desc_list">
+                        <li>
+                            <p class="desc">알바</p>
+                            <p class="seat" data-name=""></p>
+                        </li>
+                        <li class="rotate">
+                            <p class="desc">알바</p>
+                            <p class="seat" data-name=""></p>
+                        </li>
+                        <li class="martop">
+                            <p class="desc">정주연</p>
+                            <p class="seat" data-name="정주연"></p>
+                        </li>
+                        <li class="rotate">
+                            <p class="desc">NEW</p>
+                            <p class="seat" data-name=""></p>
+                        </li>
+                        <li>
+                            <p class="desc">배혜현</p>
+                            <p class="seat" data-name="배혜현"></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- // floor_2 -->
         </div>
-        <!-- // floor_2 -->
     </div>
 
     <script>
-        window.onload = function(){
+        window.onload = function () {
             var seats = document.querySelectorAll('.seat');
-            seats.forEach(function(el){
-                var random = Math.ceil(Math.random()*200)/100
-                el.style.animationDelay = random +'s'
+            seats.forEach(function (el) {
+                var random = Math.ceil(Math.random() * 150) / 100
+                el.style.animationDelay = random + 's'
             });
         }
     </script>
